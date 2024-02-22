@@ -1,0 +1,46 @@
+#Commands to Install Jenkins 
+
+In Powershell or Git bash
+
+mkdir Jenkins
+
+cd Jenkins
+
+git clone https://github.com/utrains/devops_Jenkins.git
+
+cd devops_Jenkins
+
+ls -ll
+
+cd vagrant_jenkins
+
+vagrant up
+
+ssh vagrant@192.168.56.177
+
+ssh-keygen -R 192.168.56.177   #If you get error login in
+
+passwd: vagrant
+
+sudo yum install firewalld
+
+sudo firewall-cmd --permanent --zone=public --add-port=8081/tcp
+
+systemctl start firewalld
+
+systemctl status firewalld
+
+sudo firewall-cmd --reload
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo \ https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+
+sudo yum upgrade
+
+sudo yum install Jenkins
+
+sudo systemctl daemon-reload
+
+systemctl start jenkins
+
