@@ -1,6 +1,6 @@
 #Commands to Install Jenkins 
 
-In Powershell or Git bash
+#In Powershell or Git bash
 
 mkdir Jenkins
 
